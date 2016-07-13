@@ -37,7 +37,7 @@ class BeamBase(metaclass=abc.ABCMeta):
     @staticmethod
     def _angle_to_marsaglia_coordinate(theta):
         y = np.tan(theta)**2
-        if theta <= np.pi * ureg.rad / 2.:
+        if theta <= np.pi/2. * ureg.rad:
             return sqrt(y/(y+1) - 1./sqrt(y+1) + 1./(y+1)) / sqrt(2)
         else:
             return sqrt(y/(y+1) + 1./sqrt(y+1) + 1./(y+1)) / sqrt(2)
